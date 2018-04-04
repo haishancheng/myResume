@@ -3,10 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  background: black;
+/* body{
   color: white;
-}
+} */
 a {
   text-decoration: none;
   color: inherit;
@@ -19,6 +18,10 @@ a {
 
 .topNavBar{
   padding: 20px 16px 20px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .topNavBar > .logo{
   font-size: 24px;
@@ -50,7 +53,39 @@ a {
   border-bottom: 3px solid transparent;
   padding: 5px 0;
 }
-
 .topNavBar > nav > ul > li > a:hover{
   border-bottom: 3px solid #e06567;
+}
+
+.banner {
+  background-image: url(./img/rs-cover.jpg);
+  background-position: center center;
+  background-size: cover;
+  height: 515px;
+}
+.banner .mask{
+  height: 515px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.userCard {
+  border: 1px solid red;
+  max-width: 940px;
+  margin: 0 auto;
+}
+.userCard .welcome{
+  color: white;
+  background: #e6686a;
+  padding: 4px 10px;
+  line-height: 22px;
+  display: inline-block;
+}
+
+.userCard .triangle{
+  display: block;
+  width: 0;
+  border: 10px solid transparent;
+  border-top-width: 0;
+  border-left-color: #e6686a; 
+  margin-left: 5px;
 }
