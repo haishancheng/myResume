@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>我的简历</title>
@@ -7,36 +8,54 @@
   <script src="//at.alicdn.com/t/font_620106_eyb0wazrs3zhncdi.js"></script>
   <style type="text/css">
     .icon {
-       width: 1em; height: 1em;
-       vertical-align: -0.15em;
-       fill: currentColor;
-       overflow: hidden;
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
     }
   </style>
 </head>
+
 <body>
   <div class="topNavBar">
     <a href="" class="logo">
-      <span class="rs">RS</span><span class="card">card</span>
+      <span class="rs">RS</span>
+      <span class="card">card</span>
     </a>
     <nav>
       <ul class="clearfix">
-        <li><a href="#">关于</a></li>
-        <li><a href="#">技能</a></li>
-        <li><a href="#">作品</a></li>
-        <li><a href="#">博客</a></li>
-        <li><a href="#">日历</a></li>
-        <li><a href="#">联系方式</a></li>
-        <li><a href="#">其他</a></li>
+        <li>
+          <a href="#">关于</a>
+        </li>
+        <li>
+          <a href="#">技能</a>
+        </li>
+        <li>
+          <a href="#">作品</a>
+        </li>
+        <li>
+          <a href="#">博客</a>
+        </li>
+        <li>
+          <a href="#">日历</a>
+        </li>
+        <li>
+          <a href="#">联系方式</a>
+        </li>
+        <li>
+          <a href="#">其他</a>
+        </li>
       </ul>
     </nav>
   </div>
   <div class="banner">
     <div class="mask"></div>
   </div>
-  <div class="userCard">
-    <div class="avatarAndText clearfix">
-      <div class="avatar">
+  <main>
+    <div class="userCard">
+      <div class="avatarAndText clearfix">
+        <div class="avatar">
           <img src="./img/avatar.png" alt="头像">
         </div>
         <div class="text">
@@ -56,24 +75,122 @@
             <dd>13222222222</dd>
           </dl>
         </div>
-    </div>
-    <footer>
-      <a href="#">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-GitHub"></use>
-        </svg>
-      </a>
-      <a href="#">
+      </div>
+      <footer>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-GitHub"></use>
+          </svg>
+        </a>
+        <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-CN_jianshu"></use>
           </svg>
-      </a>
-      <a href="#">
+        </a>
+        <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-weibo"></use>
           </svg>
-      </a>
-    </footer>
-  </div>
+        </a>
+      </footer>
+    </div>
+    <p class="downloadResumeWrapper">
+      <a class="downloadResume" href="./resume.pdf" target="_blank" download>下载 PDF 简历</a>
+    </p>
+    <p class="selfIntroduction">
+      王涛，工作于。。。
+      <br>技能: 前端开发，C语言开发
+    </p>
+  </main>
+  <section class="skills">
+    <h2>技能</h2>
+    <ol class="clearfix">
+      <li>
+        <h3>HTML 5 &amp; CSS 3</h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 80%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>JavaScript</h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 80%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>jQuery</h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 60%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>Vue.js</h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 10%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>React,js</h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 10%"></div>
+        </div>
+      </li>
+      <li>
+        <h3>Node.js</h3>
+        <div class="progressBar">
+          <div class="progress" style="width: 40%"></div>
+        </div>
+      </li>
+    </ol>
+  </section>
+  <section class="portfolio">
+    <h2>作品集</h2>
+    <nav>
+      <ol class="clearfix">
+        <li id="portfolio1">所有</li>
+        <li id="portfolio2">框架</li>
+        <li id="portfolio3">原生JS&amp;CSS</li>
+      </ol>
+      <div id="portfolioBar" class="bar state-1">
+        <div class="bar-inner"></div>
+      </div>
+    </nav>
+    <div class="works" style="height: 576px">
+      <!-- 这里给高度因为内部元素绝对定位脱离文档流，从而导致高度为0 -->
+      <div style="left: 0; top: 0">
+        <img src="./img/work1.jpg" alt="作品1">
+      </div>
+      <div style="right: 0; top: 0">
+        <img src="./img/work2.jpg" alt="作品2">
+      </div>
+      <div style="right: 0; bottom: -4px">
+        <img src="./img/work3.jpg" alt="作品3">
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <script>
+    portfolio1.onclick = function () {
+      portfolioBar.className = "bar state-1"
+    }
+    portfolio2.onclick = function () {
+      portfolioBar.className = "bar state-2"
+    }
+    portfolio3.onclick = function () {
+      portfolioBar.className = "bar state-3"
+    }
+  </script>
+
+
 </body>
+
 </html>
