@@ -1,61 +1,134 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+
+body {
   background: #EFEFEF;
 }
-a{
+
+a {
   text-decoration: none;
   color: inherit;
 }
-hr{
+
+hr {
   border: none;
   border-top: 1px solid #DEDEDE;
 }
-ul,ol{
+
+ul,
+ol {
   list-style: none;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
 }
-.clearfix::after{
+
+.clearfix::after {
   content: "";
   display: block;
   clear: both;
 }
 
-.topNavBar{
+.site-welcome {
+  background: #ccc;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-welcome.active {
+  display: flex;
+}
+
+.site-welcome .loading {
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+
+.loading::before,
+.loading::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: loading 1.5s linear infinite;
+}
+
+.loading::after {
+  animation-delay: 0.75s;
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+.topNavBar {
   padding: 20px 16px 20px 16px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
 }
-.topNavBar > .logo{
+
+.topNavBar>.logo {
   font-size: 24px;
   font-family: 'Arial Black';
 }
-.topNavBar > .logo > .rs{
+
+.topNavBar>.logo>.rs {
   color: #e6686a;
   margin-right: 4px;
 }
-.topNavBar > .logo > .card{
+
+.topNavBar>.logo>.card {
   color: #9a9da2;
 }
-.topNavBar > nav{
+
+.topNavBar>nav {
   float: right;
 }
-.topNavBar > nav > ul{
+
+.topNavBar>nav>ul {
   list-style: none;
   padding-top: 7px;
 }
-.topNavBar > nav > ul > li{
+
+.topNavBar>nav>ul>li {
   float: left;
   margin: 0 17px;
 }
-.topNavBar > nav > ul > li > a{
+
+.topNavBar>nav>ul>li>a {
   font-size: 12px;
   color: #b7b7b7;
   font-weight: bold;
@@ -63,7 +136,8 @@ h1,h2,h3,h4,h5,h6{
   border-bottom: 3px solid transparent;
   padding: 5px 0;
 }
-.topNavBar > nav > ul > li > a:hover{
+
+.topNavBar>nav>ul>li>a:hover {
   border-bottom: 3px solid #e06567;
 }
 
@@ -73,7 +147,8 @@ h1,h2,h3,h4,h5,h6{
   background-size: cover;
   height: 515px;
 }
-.banner .mask{
+
+.banner .mask {
   height: 515px;
   background-color: rgba(44, 51, 64, 0.8);
 }
@@ -83,11 +158,13 @@ h1,h2,h3,h4,h5,h6{
   margin: 0 auto;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.8);
 }
-.userCard .avatarAndText{
+
+.userCard .avatarAndText {
   padding: 50px;
   background: white;
 }
-.userCard .welcome{
+
+.userCard .welcome {
   color: white;
   background: #e6686a;
   padding: 4px 10px;
@@ -95,74 +172,90 @@ h1,h2,h3,h4,h5,h6{
   display: inline-block;
   font-weight: bold;
 }
-.userCard .triangle{
+
+.userCard .triangle {
   display: block;
   width: 0;
   border: 10px solid transparent;
   border-top-width: 0;
-  border-left-color: #e6686a; 
+  border-left-color: #e6686a;
   margin-left: 5px;
 }
-.userCard .avatar{
+
+.userCard .avatar {
   float: left;
 }
-.userCard .text{
+
+.userCard .text {
   float: left;
   margin-left: 65px;
   width: 470px;
 }
-.userCard .text h1{
+
+.userCard .text h1 {
   margin: 18px 0 10px;
 }
-.userCard .text p{
+
+.userCard .text p {
   color: #e8676b;
   font-size: 18px;
   font-weight: 400;
   font-family: cursive;
 }
-.userCard .text hr{
+
+.userCard .text hr {
   margin: 20px 0;
 }
+
 .userCard .text dl dt,
-.userCard .text dl dd{
+.userCard .text dl dd {
   float: left;
   padding: 5px 0;
 }
-.userCard .text dl dt{
+
+.userCard .text dl dt {
   width: 30%;
   font-weight: bold;
   font-family: '宋体';
 }
-.userCard .text dl dd{
+
+.userCard .text dl dd {
   width: 70%;
   color: #9da0a7;
 }
-.userCard footer{
+
+.userCard footer {
   background: #e8676b;
   text-align: center;
 }
-.userCard footer a{
+
+.userCard footer a {
   display: inline-block;
   border-radius: 50%;
   padding: 10px 10px;
   margin: 15px 18px;
 }
-.userCard footer a:hover{
+
+.userCard footer a:hover {
   background: rgb(208, 92, 96);
 }
-.userCard footer svg{
+
+.userCard footer svg {
   height: 25px;
   width: 25px;
   fill: white;
   vertical-align: top;
 }
-body > main{
+
+body>main {
   margin-top: -350px;
 }
-body > main .downloadResumeWrapper{
+
+body>main .downloadResumeWrapper {
   text-align: center;
 }
-body > main .downloadResume{
+
+body>main .downloadResume {
   font-size: 14px;
   font-weight: 700;
   line-height: 16px;
@@ -174,10 +267,12 @@ body > main .downloadResume{
   margin: 35px 0 30px;
   transition: box-shadow 0.3s;
 }
-body > main .downloadResume:hover{
+
+body>main .downloadResume:hover {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
-body > main .selfIntroduction{
+
+body>main .selfIntroduction {
   max-width: 940px;
   margin: 0 auto;
   text-align: center;
@@ -187,12 +282,13 @@ body > main .selfIntroduction{
 }
 
 section.skills,
-section.portfolio{
+section.portfolio {
   max-width: 940px;
   margin: 0 auto;
 }
+
 section.skills h2,
-section.portfolio h2{
+section.portfolio h2 {
   text-align: center;
   color: #3d4451;
   font-size: 34px;
@@ -200,79 +296,95 @@ section.portfolio h2{
   font-weight: 600;
   margin: 65px 0 30px;
 }
-section.skills h3{
+
+section.skills h3 {
   font-size: 14px;
   line-height: 1.1;
   font-weight: normal;
 }
-section.skills ol{
+
+section.skills ol {
   background: white;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   padding: 42px 50px 10px;
 }
-section.skills .progressBar{
+
+section.skills .progressBar {
   height: 5px;
   background: #fae1e1;
   border-radius: 2px;
   margin: 4px 0 40px;
 }
-section.skills .progressBar .progress{
+
+section.skills .progressBar .progress {
   height: 100%;
   background: #e8676b;
   width: 50%;
   border-radius: 2px;
 }
-section.skills ol > li{
+
+section.skills ol>li {
   float: left;
   width: 48%;
 }
-section.skills ol > li:nth-child(even) {
+
+section.skills ol>li:nth-child(even) {
   float: right;
 }
 
-section.portfolio{
+section.portfolio {
   text-align: center;
 }
-section.portfolio > nav{
+
+section.portfolio>nav {
   display: inline-block;
   vertical-align: top;
   margin-bottom: 30px;
 }
-section.portfolio > nav > ol > li{
+
+section.portfolio>nav>ol>li {
   float: left;
   margin-left: 40px;
   cursor: pointer;
 }
-section.portfolio > nav > ol > li:first-child{
+
+section.portfolio>nav>ol>li:first-child {
   margin-left: 0px;
 }
-section.portfolio > nav > .bar{
+
+section.portfolio>nav>.bar {
   height: 5px;
   background: white;
   margin-top: 5px;
   border-radius: 2px;
 }
-section.portfolio > nav > .bar > .bar-inner{
+
+section.portfolio>nav>.bar>.bar-inner {
   height: 100%;
   background: #e8676b;
   border-radius: 2px;
   transition: all 0.4s;
 }
-section.portfolio > nav > .bar.state-1 .bar-inner{
+
+section.portfolio>nav>.bar.state-1 .bar-inner {
   margin-left: 0;
   width: 20%;
 }
-section.portfolio > nav > .bar.state-2 .bar-inner{
+
+section.portfolio>nav>.bar.state-2 .bar-inner {
   margin-left: 65px;
   width: 30%;
 }
-section.portfolio > nav > .bar.state-3 .bar-inner{
+
+section.portfolio>nav>.bar.state-3 .bar-inner {
   margin-left: 140px;
   width: 40%;
 }
-section.portfolio .works{
+
+section.portfolio .works {
   position: relative;
 }
-section.portfolio .works>div{
+
+section.portfolio .works>div {
   position: absolute;
 }
