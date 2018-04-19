@@ -93,11 +93,21 @@ h6 {
 }
 
 .topNavBar {
-  padding: 20px 16px 20px 16px;
+  padding: 20px 16px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  transition: all 0.5s;
+  color: #b7b7b7;
+}
+
+.topNavBar.sticky {
+  background: white;
+  padding: 10px 16px;
+  color: #3d4451;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .topNavBar>.logo {
@@ -126,19 +136,91 @@ h6 {
 .topNavBar>nav>ul>li {
   float: left;
   margin: 0 17px;
+  position: relative;
 }
 
 .topNavBar>nav>ul>li>a {
   font-size: 12px;
-  color: #b7b7b7;
   font-weight: bold;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  padding: 5px 0;
+  display: block;
+  padding: 10px 0;
+  position: relative;
 }
 
-.topNavBar>nav>ul>li>a:hover {
-  border-bottom: 3px solid #e06567;
+.topNavBar .subMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  white-space: nowrap;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background: white;
+  color: #3d4451;
+  /* padding: 5px 10px; */
+  border-radius: 5px;
+}
+
+.topNavBar .subMenu>li {
+  padding: 5px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #b7b7b7;
+  font-family: '方正舒体'
+}
+
+.topNavBar .subMenu>li:last-child {
+  border-bottom-style: none;
+}
+
+.topNavBar .subMenu>li:hover {
+  background: #999;
+}
+
+.topNavBar .subMenu>li:first-child:hover {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.topNavBar .subMenu>li:last-child:hover {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.topNavBar>nav>ul>li.active .subMenu {
+  display: block;
+  animation: subMenuSlide 0.5s linear;
+}
+
+@keyframes subMenuSlide {
+  0% {
+    /* transform: translateX(-50%); */
+    margin-right: 100%;
+    opacity: 0;
+  }
+  100% {
+    margin-right: 0%;
+    opacity: 1;
+  }
+}
+
+.topNavBar>nav>ul>li.active>a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #e06567;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: menuSlide 0.5s;
+}
+
+@keyframes menuSlide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .banner {
