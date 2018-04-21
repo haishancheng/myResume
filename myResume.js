@@ -9,7 +9,7 @@ var resume = {
         this.aTags = document.querySelectorAll('.topNavBar>nav>ul>li>a')
         this.subMenuLiTags = document.querySelectorAll('.topNavBar .subMenu li')
         this.specialTags = document.querySelectorAll('[data-x]') //滚动到对应位置需要高亮的标记
-        //添加offset类
+            //添加offset类
         this.specialTags.forEach(function(specialTag) {
             specialTag.classList.add('offset')
         })
@@ -137,7 +137,8 @@ var resume = {
         requestAnimationFrame(animate);
     }
 }
-window.onload = function() {
+
+document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById('site-welcome').className = "site-welcome"
     resume.init()
-}
+})
