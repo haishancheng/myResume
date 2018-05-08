@@ -4,18 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>我的简历</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
   <link rel="stylesheet" href="./myResume.css">
 
   <script src="//at.alicdn.com/t/font_620106_eyb0wazrs3zhncdi.js"></script>
-  <style type="text/css">
-    .icon {
-      width: 1em;
-      height: 1em;
-      vertical-align: -0.15em;
-      fill: currentColor;
-      overflow: hidden;
-    }
-  </style>
 </head>
 
 <body>
@@ -38,9 +30,9 @@
         <li>
           <a href="#siteWorks">作品</a>
           <ul class="subMenu">
-            <li>作品1</li>
-            <li>作品2</li>
-            <li>作品3</li>
+            <li>导航网站</li>
+            <li>画板</li>
+            <li>无缝轮播</li>
           </ul>
         </li>
         <li>
@@ -159,27 +151,17 @@
   </section>
   <section data-x id="siteWorks" class="portfolio">
     <h2>作品集</h2>
-    <nav>
-      <ol class="clearfix">
-        <li id="portfolio1">所有</li>
-        <li id="portfolio2">框架</li>
-        <li id="portfolio3">原生JS&amp;CSS</li>
-      </ol>
-      <div id="portfolioBar" class="bar state-1">
-        <div class="bar-inner"></div>
+    <div class="mySlides">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <img class="swiper-slide" src="./img/navigation.jpg">
+          <img class="swiper-slide" src="./img/canvas.jpg">
+          <img class="swiper-slide" src="./img/carousel.jpg">
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
-    </nav>
-    <div class="works" style="height: 576px">
-      <!-- 这里给高度因为内部元素绝对定位脱离文档流，从而导致高度为0 -->
-      <div style="left: 0; top: 0">
-        <img src="./img/work1.jpg" alt="作品1">
-      </div>
-      <div style="right: 0; top: 0">
-        <img src="./img/work2.jpg" alt="作品2">
-      </div>
-      <div style="right: 0; bottom: -4px">
-        <img src="./img/work3.jpg" alt="作品3">
-      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </section>
   <br>
@@ -190,11 +172,14 @@
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
-  <script type="text/javascript" src="./myResume.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.min.js"></script>
+  <script type="text/javascript" src="./js/myResume.js"></script>
+  <script type="text/javascript" src="./js/sticky-topbar.js"></script>
+  <script type="text/javascript" src="./js/init-swiper.js"></script>
+  <script type="text/javascript" src="./js/auto-slide-up.js"></script>
+  <script type="text/javascript" src="./js/smoothly-navigation.js"></script>
 </body>
 
 </html>
