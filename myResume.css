@@ -386,13 +386,14 @@ section.skills {
 }
 
 section.skills h2,
-section.portfolio h2 {
+section.portfolio h2,
+section.message h2 {
   text-align: center;
   color: #3d4451;
   font-size: 34px;
   line-height: 1.2;
   font-weight: 600;
-  margin: 65px 0 30px;
+  margin: 80px 0 40px;
 }
 
 section.skills h3 {
@@ -444,11 +445,18 @@ section.portfolio {
   /* padding-top: 1px; */
 }
 
-section.portfolio .mySlides {
-  max-width: 820px;
+section.portfolio .swiper-container {
+  width: 820px;
+  height: 615px;
   margin: 0 auto;
   position: relative;
 }
+
+
+/* section.portfolio .mySlides .swiper-slide {
+  width: 820px;
+  height: 615px;
+} */
 
 section.portfolio .mySlides .swiper-container {
   border-radius: 20px;
@@ -477,4 +485,26 @@ section.portfolio .mySlides .swiper-button-next {
 section.portfolio .mySlides .swiper-button-prev:hover,
 section.portfolio .mySlides .swiper-button-next:hover {
   background-color: #999;
+}
+
+section.message {
+  max-width: 940px;
+  margin: 0 auto;
+  /* padding-top: 1px; */
+}
+
+section.message #messageList {
+  background: #F4F4F4;
+  margin-top: 20px;
+  /* max-height: 1000px;
+  overflow-y: scroll; */
+}
+
+section.message #messageList>li {
+  padding: 16px;
+  border-bottom: 1px solid #DDD;
+}
+
+section.message #messageList>li:first-child {
+  border-top: 1px solid #DDD;
 }
